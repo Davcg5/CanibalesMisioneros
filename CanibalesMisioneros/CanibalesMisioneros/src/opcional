@@ -1,0 +1,133 @@
+if((canibalesDerecha -canibalesIzquierda==2) ^ canibalesDerecha -canibalesIzquierda==3
+						&& (canibalesDerecha+2)<=3){
+
+					Nodo hijo = new Nodo (clonar(revisar.getEstado()));
+					hijo.getEstado()[0][1] =  hijo.getEstado()[0][1] - 2;
+					hijo.getEstado()[1][1] =  hijo.getEstado()[1][1] + 2;
+					hijo.getEstado()[1][2] = 1;
+					hijo.getEstado()[0][2] = 0;
+					if(!estaVisitado(nodosVisitados, hijo)){
+						hijosARevisar.add(hijo);
+						hijos.add(hijo);
+						System.out.println("v2");
+					}
+				}
+
+				if(misionerosDerecha - misionerosIzquierda ==1 &&((misionerosDerecha+1)<=3)){
+					Nodo hijo = new Nodo (clonar(revisar.getEstado()));
+					hijo.getEstado()[0][0] =  hijo.getEstado()[0][0] - 1;
+					hijo.getEstado()[1][0] =  hijo.getEstado()[1][0] + 1;
+					hijo.getEstado()[1][2] = 1;
+					hijo.getEstado()[0][2] = 0;
+					if(!estaVisitado(nodosVisitados, hijo)){
+						hijosARevisar.add(hijo);
+						hijos.add(hijo);
+						System.out.println("v3");
+					}
+
+				}
+
+				if(canibalesDerecha -canibalesIzquierda ==1&&((canibalesDerecha+1)<=3)){
+					Nodo hijo = new Nodo (clonar(revisar.getEstado()));
+					hijo.getEstado()[0][1] =  hijo.getEstado()[0][1] - 1;
+					hijo.getEstado()[1][1] =  hijo.getEstado()[1][1] + 1;
+					hijo.getEstado()[1][2] = 1;
+					hijo.getEstado()[0][2] = 0;
+					if(!estaVisitado(nodosVisitados, hijo)){
+						hijosARevisar.add(hijo);
+						hijos.add(hijo);
+						System.out.println("v4");
+					}
+
+				}
+
+				if(((misionerosDerecha + 1)<=3) && ((canibalesDerecha + 1)<=3)){
+					Nodo hijo = new Nodo (clonar(revisar.getEstado()));
+					hijo.getEstado()[0][0] =  hijo.getEstado()[0][0] - 1;
+					hijo.getEstado()[1][0] =  hijo.getEstado()[1][0] + 1;
+					hijo.getEstado()[0][1] =  hijo.getEstado()[0][1] - 1;
+					hijo.getEstado()[1][1] =  hijo.getEstado()[1][1] + 1;
+					hijo.getEstado()[1][2] = 1;
+					hijo.getEstado()[0][2] = 0;
+					if(!estaVisitado(nodosVisitados, hijo)){
+						hijosARevisar.add(hijo);
+						hijos.add(hijo);
+						System.out.println("v5");
+					}
+
+				}
+
+			}else{
+
+				if(misionerosIzquierda -misionerosDerecha ==2 ^ (misionerosIzquierda-misionerosDerecha==3)
+						&&((misionerosIzquierda+2)<=3)){
+
+					Nodo hijo = new Nodo (clonar(revisar.getEstado()));
+					hijo.getEstado()[1][0] =  hijo.getEstado()[1][0] - 2;
+					hijo.getEstado()[0][0] =  hijo.getEstado()[0][0] + 2;
+					hijo.getEstado()[1][2] = 0;
+					hijo.getEstado()[0][2] = 1;
+					if(!estaVisitado(nodosVisitados, hijo)){
+						hijosARevisar.add(hijo);
+						hijos.add(hijo);
+						System.out.println("v6");
+					}
+				}
+
+
+				if(canibalesIzquierda - canibalesDerecha ==2 ^ canibalesIzquierda -canibalesDerecha ==3
+						&&((canibalesIzquierda+2)<=3)){
+
+					Nodo hijo = new Nodo (clonar(revisar.getEstado()));
+					hijo.getEstado()[1][1] =  hijo.getEstado()[1][1] - 2;
+					hijo.getEstado()[0][1] =  hijo.getEstado()[0][1] + 2;
+					hijo.getEstado()[1][2] = 0;
+					hijo.getEstado()[0][2] = 1;
+					if(!estaVisitado(nodosVisitados, hijo)){
+						hijosARevisar.add(hijo);
+						hijos.add(hijo);
+						System.out.println("v7");
+					}
+
+				}
+
+				if(misionerosIzquierda -misionerosDerecha==1 &&((misionerosIzquierda+1)<=3)){
+					Nodo hijo = new Nodo (clonar(revisar.getEstado()));
+					hijo.getEstado()[0][0] =  hijo.getEstado()[0][0] + 1;
+					hijo.getEstado()[1][0] =  hijo.getEstado()[1][0] - 1;
+					hijo.getEstado()[1][2] = 0;
+					hijo.getEstado()[0][2] = 1;
+					if(!estaVisitado(nodosVisitados, hijo)){
+						hijosARevisar.add(hijo);
+						hijos.add(hijo);
+						System.out.println("v8");
+					}
+				}
+
+				if((canibalesIzquierda + 1)<=3 && canibalesIzquierda-canibalesDerecha==1){
+					Nodo hijo = new Nodo (clonar(revisar.getEstado()));
+					hijo.getEstado()[0][1] =  hijo.getEstado()[0][1] + 1;
+					hijo.getEstado()[1][1] =  hijo.getEstado()[1][1] - 1;
+					hijo.getEstado()[1][2] = 0;
+					hijo.getEstado()[0][2] = 1;
+					if(!estaVisitado(nodosVisitados, hijo)){
+						hijosARevisar.add(hijo);
+						hijos.add(hijo);
+						System.out.println("v9");
+					}
+				}
+
+				if(((misionerosIzquierda + 1)<=3) && ((canibalesIzquierda+ 1)<=3)){
+					Nodo hijo = new Nodo (clonar(revisar.getEstado()));
+					hijo.getEstado()[0][0] =  hijo.getEstado()[0][0] + 1;
+					hijo.getEstado()[1][0] =  hijo.getEstado()[1][0] - 1;
+					hijo.getEstado()[0][1] =  hijo.getEstado()[0][1] + 1;
+					hijo.getEstado()[1][1] =  hijo.getEstado()[1][1] - 1;
+					hijo.getEstado()[1][2] = 0;
+					hijo.getEstado()[0][2] = 1;
+					if(!estaVisitado(nodosVisitados, hijo)){
+						hijosARevisar.add(hijo);
+						hijos.add(hijo);
+						System.out.println("v10");
+					}
+				}
